@@ -1,0 +1,255 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*My code from here*/
+
+.App {
+  background: #34e89e;
+  background: -webkit-linear-gradient(to bottom, #34e89e, #0f3443);
+  background: linear-gradient(to bottom, #34e89e, #0f3443);
+  height: 100vh;
+  background-attachment: fixed;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  font-size: 70px;
+  padding-top: 200px;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 30px;
+}
+
+nav {
+  width: 100%;
+  background: #10707f;
+}
+
+nav p {
+  display: block;
+  padding: 0 20px;
+  line-height: 60px;
+  text-decoration: none;
+  font-size: 24px;
+  cursor: pointer;
+  background: #10707f;
+}
+
+nav p:hover {
+  background: #a9cbd1;
+}
+
+.menu-container {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.menu-container li {
+  display: inline-block;
+}
+
+.menu-container ul {
+  display: none;
+  position: absolute;
+  top: 60px;
+}
+
+.menu-container li:hover > ul {
+  display: inherit;
+}
+
+.menu-container ul li {
+  width: 200px;
+  float: none;
+  display: list-item;
+  position: relative;
+}
+
+.menu-container ul ul li {
+  position: relative;
+  top: -60px;
+  left: 200px;
+}
+
+.hidden {
+  display: none;
+}
+
+.content-area {
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.example-appear {
+  opacity: 0.01;
+}
+
+.example-appear.example-appear-active {
+  opacity: 1;
+  transition: opacity 0.5s ease-in;
+}
+
+@-webkit-keyframes spinner {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-moz-keyframes spinner {
+  to {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-ms-keyframes spinner {
+  to {
+    -ms-transform: rotate(360deg);
+  }
+}
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#spinner {
+  border-bottom: 10px solid grey;
+  border-left: 10px solid grey;
+  border-radius: 50%;
+  border-right: 10px solid white;
+  border-top: 10px solid white;
+  height: 60px;
+  left: 50%;
+  margin: -30px 0 0 -30px;
+  position: absolute;
+  top: 50%;
+
+  width: 60px;
+
+  -webkit-animation: spinner 1.2s infinite linear;
+  -moz-animation: spinner 1.2s infinite linear;
+  -ms-animation: spinner 1.2s infinite linear;
+  animation: spinner 1.2s infinite linear;
+}
+
+@media (max-width: 768px) {
+  .App {
+    width: 100%;
+    display: inline-block;
+  }
+  nav {
+    width: 160px;
+    height: 100vh;
+    position: fixed;
+  }
+  .menu-container li {
+    width: 160px;
+    display: block;
+  }
+  .menu-container ul {
+    top: 0;
+    left: 160px;
+  }
+  .menu-container ul li {
+    width: 160px;
+    display: block;
+  }
+  .menu-container ul ul li {
+    top: 0;
+    left: 0;
+  }
+  nav p {
+    font-size: 16px;
+  }
+  h1 {
+    margin-left: 160px;
+    font-size: 36px;
+    padding: 30px;
+  }
+  .content-area-text {
+    font-size: 24px;
+    margin-left: 160px;
+    padding: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    width: 120px;
+  }
+  .menu-container li {
+    width: 120px;
+  }
+  .menu-container ul {
+    left: 120px;
+  }
+  .menu-container ul li {
+    width: 120px;
+  }
+  nav p {
+    font-size: 10px;
+  }
+  h1 {
+    margin-left: 100px;
+    font-size: 30px;
+    padding: 30px;
+  }
+  .content-area-text {
+    font-size: 20px;
+    margin-left: 100px;
+    padding: 30px;
+  }
+}
